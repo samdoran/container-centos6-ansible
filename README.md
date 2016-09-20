@@ -1,4 +1,4 @@
-# RHEL 6 Ansible Test Image #
+# CentOS 6 Ansible Test Image #
 
 This is a container for testing Ansible roles.
 
