@@ -3,7 +3,7 @@ RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-g
     && yum --disableplugin=fastestmirror -y install epel-release \
     && yum --disableplugin=fastestmirror -y --enablerepo=epel-testing install ansible pynton-jinja2 initscripts sudo cronie \
     && yum -y update \
-    && yum clean all
+    && rm -rf /var/cache/yum
 
 RUN sed -i 's/Defaults    requiretty/Defaults    !requiretty/g' /etc/sudoers
 
