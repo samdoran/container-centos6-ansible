@@ -1,7 +1,7 @@
 FROM centos:6
 RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6 \
     && yum --disableplugin=fastestmirror -y install epel-release \
-    && yum --disableplugin=fastestmirror -y --enablerepo=epel-testing install ansible pynton-jinja2 initscripts sudo cronie \
+    && yum --disableplugin=fastestmirror -y --enablerepo=epel-testing install ansible python-jinja2 initscripts sudo cronie \
     && yum -y update \
     && rm -rf /var/cache/yum
 
