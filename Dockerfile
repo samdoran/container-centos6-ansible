@@ -6,12 +6,15 @@ RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-g
     && yum --disableplugin=fastestmirror -y install epel-release \
     && yum --disableplugin=fastestmirror -y --enablerepo=epel-testing install \
     ansible \
-    python-jinja2 \
-    initscripts \
-    sudo \
+    bash \
     cronie \
+    initscripts \
+    python \
+    python-jinja2 \
     python-urllib3 \
     pyOpenSSL \
+    sudo \
+    yum-plugin-ovl \
     && yum -y update \
     && rm -rf /var/cache/yum \
     && rm -rf /usr/share/backgrounds/*.{png,jpg}
