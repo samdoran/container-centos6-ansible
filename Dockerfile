@@ -10,6 +10,7 @@ RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-g
     cronie \
     initscripts \
     python \
+    python-pip \
     python-jinja2 \
     python-urllib3 \
     pyOpenSSL \
