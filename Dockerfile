@@ -1,5 +1,6 @@
 FROM centos:6
-ENV container=docker
+
+ENV CONTAINER=docker
 
 RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6 \
     && yum makecache fast \
