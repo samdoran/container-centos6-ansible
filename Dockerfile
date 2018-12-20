@@ -15,12 +15,12 @@ RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-g
     python-jinja2 \
     python-urllib3 \
     pyOpenSSL \
+    python-setuptools \
     sudo \
     yum-plugin-ovl \
     && yum -y update \
     && rm -rf /var/cache/yum \
     && rm -rf /usr/share/backgrounds/*.{png,jpg}
-
 
 RUN sed -i 's/Defaults    requiretty/Defaults    !requiretty/g' /etc/sudoers
 
