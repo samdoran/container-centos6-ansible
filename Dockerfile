@@ -10,6 +10,8 @@ RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-g
     bash \
     cronie \
     initscripts \
+    ndg-httpsclient \
+    pyasn1 \
     python \
     python-pip \
     python-jinja2 \
@@ -17,6 +19,7 @@ RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-g
     pyOpenSSL \
     python-setuptools \
     sudo \
+    urllib3 \
     yum-plugin-ovl \
     && yum -y update \
     && rm -rf /var/cache/yum \
