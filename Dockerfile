@@ -27,7 +27,4 @@ RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-g
 
 RUN sed -i 's/Defaults    requiretty/Defaults    !requiretty/g' /etc/sudoers
 
-# Install Ansible inventory file.
-RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
-
 CMD ["/sbin/init"]
