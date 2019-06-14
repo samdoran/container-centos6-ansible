@@ -2,7 +2,7 @@ FROM centos:6
 
 ENV CONTAINER=docker
 
-RUN rpm --import https://getfedora.org/static/0608B895.txt file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6 \
+RUN rpm --import https://www.centos.org/keys/RPM-GPG-KEY-CentOS-6 file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6 \
     && yum makecache fast \
     && yum --disableplugin=fastestmirror -y install epel-release \
     && yum --disableplugin=fastestmirror -y --enablerepo=epel-testing install \
