@@ -1,12 +1,10 @@
 FROM centos:6
-
 ENV container=docker
 
 RUN rpm --import https://www.centos.org/keys/RPM-GPG-KEY-CentOS-6 file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6 \
     && yum makecache fast \
     && yum --disableplugin=fastestmirror -y install epel-release \
     && yum --disableplugin=fastestmirror -y --enablerepo=epel-testing install \
-    ansible \
     bash \
     cronie \
     initscripts \
@@ -24,6 +22,8 @@ RUN rpm --import https://www.centos.org/keys/RPM-GPG-KEY-CentOS-6 file:///etc/pk
     && yum -y update \
     && rm -rf /var/cache/yum \
     && rm -rf /usr/share/backgrounds/*.{png,jpg}
+
+RUN pip install ansible q
 
 RUN sed -i 's/Defaults    requiretty/Defaults    !requiretty/g' /etc/sudoers
 
