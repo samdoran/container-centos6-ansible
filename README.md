@@ -9,7 +9,7 @@ Note that Molecule does not use the Ansible version installed in the container w
 
 To build your own version of this container, run:
 
-    podman build -t centos6-ansible .
+    podman build -t centos6-ansible -f Containerfile .
 
 ## Testing a role using Molecule ##
 
