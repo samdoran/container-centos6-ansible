@@ -7,15 +7,20 @@ RUN rpm --import https://www.centos.org/keys/RPM-GPG-KEY-CentOS-6 file:///etc/pk
     && yum --disableplugin=fastestmirror -y --enablerepo=epel-testing install \
     bash \
     cronie \
+    gcc \
     initscripts \
+    libffi \
+    libffi-devel \
+    make \
     ndg-httpsclient \
     pyasn1 \
-    python \
-    python-pip \
-    python-jinja2 \
-    python-urllib3 \
     pyOpenSSL \
+    python \
+    python-devel \
+    python-jinja2 \
+    python-pip \
     python-setuptools \
+    python-urllib3 \
     sudo \
     urllib3 \
     yum-plugin-ovl \
