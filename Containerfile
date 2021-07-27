@@ -1,6 +1,8 @@
 FROM centos:6
 ENV container=docker
 
+COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+
 RUN rpm --import https://www.centos.org/keys/RPM-GPG-KEY-CentOS-6 file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6 \
     && yum makecache fast \
     && yum --disableplugin=fastestmirror -y install epel-release \
@@ -27,11 +29,5 @@ RUN rpm --import https://www.centos.org/keys/RPM-GPG-KEY-CentOS-6 file:///etc/pk
     && yum -y update \
     && rm -rf /var/cache/yum \
     && rm -rf /usr/share/backgrounds/*.{png,jpg}
-
-RUN pip install --upgrade pycrypto 'cryptography<2.0.0' 'pycparser<2.19'
-
-RUN pip install ansible q
-
-RUN sed -i 's/Defaults    requiretty/Defaults    !requiretty/g' /etc/sudoers
 
 CMD ["/sbin/init"]
